@@ -1,0 +1,446 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------------------*/
+/*Обнуляємо параметри замовчуванням у браузерів*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,italic,600,600,900);
+* {
+  /* зірочка означає, що ми звертаємось до всіх тегів на сторінці*/
+  padding: 0;
+  /*обнуляємо внутрішні відступи*/
+  margin: 0;
+  /*обнуляємо зовнішні відступи*/
+  border: 0;
+  /*обнуляємо межі*/
+}
+
+*, *:before, *:after {
+  /*змінюємо підрахунок ширини блоку для всіх тегів та тегів із псевдоелементами*/
+  -webkit-box-sizing: border-box;
+  /* "-webkit" означає apple*/
+  box-sizing: border-box;
+  /*Розмір боксу включає в себе всі відступи і будь-які межі. Контет буде зжиматись, щоб вмістить в боксі*/
+  -moz-box-sizing: border-box;
+  /* "-moz" означає firefox */
+}
+
+:focus, :active {
+  outline: none;
+}
+
+/*забераємо лінії обводки в деяких браузерах підчас використання предпроцесів*/
+a:focus, a:active {
+  outline: none;
+}
+
+/*забераємо лінії обводки в деяких браузерах підчас використання передпроцесів на посиланнях*/
+nav, footer, header, aside {
+  display: block;
+}
+
+/*одразу надаємо кільком тегам HTML5 властивостей блоку*/
+html, body {
+  height: 100%;
+  /*Вказуємо сайту займати всю висоту материського блоку - монітору*/
+  width: 100%;
+  /*Вказуємо сайту займати всю ширину материського блоку - монітору*/
+  font-size: 100%;
+  /*Розмір за замовчуванням має 100% від вказаного розміру*/
+  line-height: 1;
+  /*Міжрядковий інтервал дорівнює ширині шрифта*/
+  font-size: 14px;
+  /*Розмір шрифта за замовчуванням 14 пікселів. Класіка.*/
+  -ms-text-size-adjust: 100%;
+  /* "-ms" значить microsoft (не даємо браузеру самовільно змінювати розмір шрифта) */
+  -moz-text-size-adjust: 100%;
+  /* "-moz" означає firefox (не даємо браузеру самовільно змінювати розмір шрифта)*/
+  -webkit-text-size-adjust: 100%;
+  /* "-webkit" означає apple (не даємо айфонам самовільно змінювати розмір шрифта)*/
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+/*Звертаємось до тегів форм і просимо їх наслідувати сімейство шрифта*/
+input::-ms-clear {
+  display: none;
+}
+
+/*Заберає заданий автоматично стиль кнопки "очистити текстове поле". Спочатку ця кнопка невидима і 
+з'являється у правій частині поля лише підчас введення тексту. Браузер Internet Explorer& Edge.*/
+button {
+  cursor: pointer;
+}
+
+/*Задаємо стиль курсору підчас наведеня на кнопку*/
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/*Забираємо зайві відступи та пробели навкруги кнопок в браузері Firefox.*/
+a, a:visited {
+  text-decoration: none;
+}
+
+/*Відвідані посилання не змінюються*/
+a:hover {
+  text-decoration: none;
+}
+
+/*Посилання при наведенні не змінюються*/
+ul li {
+  list-style: none;
+}
+
+/*Видаляємо стилі списків*/
+img {
+  vertical-align: top;
+}
+
+/*Встановлюємо за замовчуванням вертикальне позиціонування тегу картинки*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 400;
+}
+
+/*Обнуляємо стилі заголовку та вказуємо наслідувати сімейство шрифта*/
+/*------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+/*Підключення файлу зі шрифтами*/
+/*Підключаємо необхідні шрифти*/
+/*Родина шрифтів осовного тексту*/
+/*----------------------------------------------------------------------------------------*/
+/* general scss */
+.wrapper {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: #2F8E84;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fullscreen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.message {
+  width: 100%;
+  height: 96px;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 96px;
+  letter-spacing: 5px;
+  text-shadow: 1px 5px black;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  -webkit-transition: all 0.4s ease-in 0s;
+  transition: all 0.4s ease-in 0s;
+}
+
+.message::before, .message::after {
+  content: '';
+  position: relative;
+  top: 5px;
+}
+
+.message::before {
+  padding-left: 92px;
+  right: 25px;
+}
+
+.message::after {
+  padding-right: 92px;
+  left: 25px;
+}
+
+.message._game-over {
+  color: red;
+}
+
+.message._game-over::before, .message._game-over::after {
+  background: url("../img/game/boom.png") 0 0/92px no-repeat;
+}
+
+.message._game-win {
+  color: green;
+}
+
+.message._game-win::before, .message._game-win::after {
+  background: url("../img/game/win.png") 0 0/92px no-repeat;
+}
+
+.message._off {
+  display: none;
+}
+
+.container {
+  width: 1024px;
+}
+
+/* header scss */
+.header__title {
+  font-size: 72px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 15px;
+}
+
+.header__title::after {
+  content: '';
+  background: url("../img/header/flag.png") 0 0/92px no-repeat;
+  padding-right: 92px;
+  position: relative;
+  top: 5px;
+  left: 25px;
+}
+
+.header__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #f9f9ff;
+  border-radius: 25px 25px 0 0;
+  -webkit-box-shadow: 0px 0px 5px 5px #077b6f;
+          box-shadow: 0px 0px 5px 5px #077b6f;
+  margin: 15px 0px 0px;
+  width: 100%;
+  color: #70757A;
+}
+
+.header__setlevel {
+  width: 190px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 15px 25px;
+}
+
+.header__arrow::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  -webkit-transition: -webkit-transform 0.7s ease 0s;
+  transition: -webkit-transform 0.7s ease 0s;
+  transition: transform 0.7s ease 0s;
+  transition: transform 0.7s ease 0s, -webkit-transform 0.7s ease 0s;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #14BDAC;
+  border-radius: 6px;
+  margin: 3px 5px 0 0px;
+  line-height: 1.2;
+}
+
+.header__arrow._active::before {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.header__list {
+  margin-left: 5px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.header__list._active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header__list li {
+  margin-top: 5px;
+  padding: 0 0px 0 22px;
+}
+
+.header__list li:first-child {
+  margin-top: 10px;
+}
+
+.header__list li:hover {
+  text-decoration: underline;
+}
+
+.header__list li._active {
+  background: url("../img/header/check.png") left no-repeat;
+}
+
+.header__stopwatch {
+  width: 250px;
+  height: 40px;
+  margin-bottom: 5px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  text-align: center;
+  color: #70757A;
+  font-size: 26px;
+  border-radius: 7px;
+  border: 1px solid #AAAFBD;
+  line-height: 1.5;
+  border-bottom: none;
+  background-color: #f9f9ff;
+  border-bottom: 3px solid #14bdac;
+  -webkit-box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.header__stopwatch span {
+  display: inline-block;
+  width: 35px;
+}
+
+.header__start {
+  width: 190px;
+  height: 50px;
+  padding: 0px 35px;
+  margin: 15px 25px;
+  color: #70757A;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 25px;
+  border: 1px solid #AAAFBD;
+  border-bottom: none;
+  background-color: #f9f9ff;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header__start:active {
+  border-bottom: 5px solid #14bdac;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.header__text {
+  font-size: 12px;
+  margin: 10px 0 5px 0;
+  color: #ffffff;
+}
+
+.game {
+  background-color: #14bdac;
+}
+
+.game__canvas {
+  width: 0px;
+  height: 0px;
+  margin: 0 auto;
+}
+
+.game__canvas button {
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
+  -webkit-writing-mode: horizontal-tb !important;
+      -ms-writing-mode: lr-tb !important;
+          writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-align: center;
+  border-width: 2px;
+  border-style: outset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__box {
+  margin: 0px 0px 50px 0px;
+  width: 100%;
+  height: 32px;
+  font-size: 14px;
+  line-height: 32px;
+  font-weight: 600;
+  color: #70757A;
+  background-color: #f9f9ff;
+  border-radius: 0 0 25px 25px;
+  -webkit-box-shadow: 0px 5px 5px 5px #077b6f;
+          box-shadow: 0px 5px 5px 5px #077b6f;
+}
+
+.footer__title {
+  font-size: 25px;
+}
+
+.footer__row {
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__icon {
+  margin: 0px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.footer__img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-width: 60%;
+}

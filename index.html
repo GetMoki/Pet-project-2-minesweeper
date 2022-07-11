@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Мінний тральщик</title>
+	<link rel="icon" type="image/x-icon" href="img/header/flag.png" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<main class="fullscreen">
+			<div id="message" class="message _off">Ви програли</div>
+			<section class="header">
+				<div class="container">
+					<h1 class="header__title">Мінний тральщик</h1>
+					<div class="header__row">
+						<div class="header__setlevel">
+							<span class="header__arrow">Виберіть складність</span>
+							<ul class="header__list">
+								<li data-id="Easy">
+									<p class="header__level">Простий</p>
+								</li>
+								<li data-id="Middle">
+									<p class="header__level">Помірний</p>
+								</li>
+								<li data-id="Hard">
+									<p class="header__level">Складний</p>
+								</li>
+							</ul>
+						</div>
+						<div class="header__stopwatch">
+							<p>
+								<span id="minutes">00</span>:<span id="seconds">00</span>
+							</p>
+						</div>
+						<button id="start" type="button" class="header__start">Старт</button>
+					</div>
+				</div>
+			</section>
+			<section class="game">
+				<div class="container">
+					<div class="game__canvas" id="canvas"></div>
+				</div>
+			</section>
+			<section class="footer">
+				<div class="container">
+					<div class="footer__box" id="manual">Для початку гри виберіть рівень складності та натисніть кнопку старт</div>
+					<h3 class="footer__title">
+						Дізнатися більше можна за посиланнями
+					</h3>
+					<div class="footer__row">
+						<a href="https://github.com/GetMoki?tab=repositories" target="_blank" class="footer__icon">
+							<img src="img/footer/github.png" alt="github" class="footer__img">
+						</a>
+						<a href="https://www.instagram.com/viktorriabyy/" target="_blank" class="footer__icon">
+							<img src="img/footer/instagram.png" alt="instagram" class="footer__img">
+						</a>
+						<a href="https://www.linkedin.com/in/viktorriabyy/" target="_blank" class="footer__icon">
+							<img src="img/footer/linkedin.png" alt="linkedin" class="footer__img">
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+	<!--Підключаємо бібліотеку JQuery-->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!--Підключив файл з скріптами - Javascript-->
+	<script src="js/script.js"></script>
+</body>
+
+</html>
