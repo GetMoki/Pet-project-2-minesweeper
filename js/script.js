@@ -196,7 +196,7 @@ function updateButtons() {
       if (failedBombKey !== null && value === 'bomb') {
         cell.disabled = true;
         //imput bomb img in cell
-        cell.innerHTML = "<img src='../img/game/mine.png'/>";
+        cell.innerHTML = "<img src='img/game/mine.png'/>";
         //changed color under bomb in cell
         cell.style.backgroundColor = 'red';
         if (key === failedBombKey) {
@@ -228,7 +228,7 @@ function updateButtons() {
           throw Error('should never happen');
         }
       } else if (flaggedKeys.has(key)) {
-        cell.innerHTML = "<img src='../img/game/flag.png'/>";
+        cell.innerHTML = "<img src='img/game/flag.png'/>";
         if (failedBombKey === null && value === 'bomb') {
           bombSroce++;
         }
@@ -345,7 +345,7 @@ startButton.addEventListener('click', function () {
   showUserManual()
   //selected level of game and size of ground
   setLevel(selectedLevel);
-  console.log("TODO better selected level function. Because you can choose level only once")
+  console.log("TODO better selected level function. Because you can choose level only once");
   //start and restart game
   startGame();
   oldSelectedLevel = selectedLevel;
